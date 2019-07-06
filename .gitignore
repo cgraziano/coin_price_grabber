@@ -1,2 +1,5 @@
 /venv
 .idea
+key.txt
+results.txt
+__pycache__
