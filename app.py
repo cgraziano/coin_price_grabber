@@ -21,7 +21,7 @@ def getPrices():
     pricegetter = CoinMarketCap(session)
     for coin in CMCCoins:
         price = pricegetter.getPrice(coin.value)
-        output = coin.name + ' ' + str(price) + '\n'
+        output = coin.name + ' ' + str(price)
         print(output)
         file.write(output)
         time.sleep(timeToSleep)
