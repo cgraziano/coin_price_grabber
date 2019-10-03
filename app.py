@@ -4,16 +4,20 @@ import time
 import sys
 from requests import Session
 
-def getApiKeyFromFile():
-    file = open('key.txt', 'r')
+def getApiKeyFromFile(relativePath):
+    file = open(relativePath, 'r')
     key = file.read()
     return key
 
+
 def getApiKeyFromArguments():
     arguments = sys.argv
-    print arguments
-    file = open('key.txt', 'r')
-    key = file.read()
+    numArgs = len(arguments)
+    expectedNumArgs = 2
+    if numArgs!=expectedNumArgs:
+        raise AssertionError("When executing this file, the relative path to the cryptocurrency API key must be specified.")
+    relativePath = arguments[1]
+    key = getApiKeyFromFile(relativePath)
     return key
 
 def getPrices():
@@ -35,6 +39,4 @@ def getPrices():
         time.sleep(timeToSleep)
     file.close()
 
-
-getApiKeyFromArguments()
 getPrices()

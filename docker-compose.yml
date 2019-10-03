@@ -1,6 +1,8 @@
 version: '2'
 services:
     puller:
+        context: .
         build: .
         image: coin_price_grabber 
+
 
