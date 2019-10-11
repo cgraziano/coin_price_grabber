@@ -3,11 +3,7 @@ from coin_market_cap_coins.cmc_coins import CMCCoins
 import time
 import sys
 from requests import Session
-
-def getApiKeyFromFile(relativePath):
-    file = open(relativePath, 'r')
-    key = file.read()
-    return key
+from key_extraction import getApiKeyFromFile 
 
 
 def getApiKeyFromArguments():

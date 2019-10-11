@@ -4,6 +4,9 @@ coin prices by the coin's symbol.
 
 An empty string will be returned if an empty string is found.
 
+#Tests
+python -m unittest test.key_extraction_test
+
 #Build
 docker build -t coin_price_grabber:latest coin_price_grabber
 
